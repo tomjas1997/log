@@ -3,6 +3,9 @@
 use Monolog\Handler\NullHandler;
 
 return [
+    'default' => env('LOG_CHANNEL', 'stack'),
+
+    /** @see https://laravel.com/docs/10.x/logging#creating-custom-channels-via-factories */
     'channels' => [
         'stack' => [
             'driver' => 'stack',
@@ -12,7 +15,7 @@ return [
 
         'single' => [
             'driver' => 'single',
-            //'path' => \Illuminate\Container\Container::getInstance()->storagePath() . '/logs/laravel.log',
+            'path' => \Illuminate\Container\Container::getInstance()->storagePath() . '/logs/laravel.log',
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 
@@ -42,7 +45,7 @@ return [
         ],
 
         'emergency' => [
-            //'path' =>  \Illuminate\Container\Container::getInstance()->storagePath() . '/logs/laravel.log',
+            'path' =>  \Illuminate\Container\Container::getInstance()->storagePath() . '/logs/laravel.log',
         ],
     ],
 ];
