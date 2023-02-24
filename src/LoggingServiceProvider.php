@@ -17,7 +17,7 @@ class LoggingServiceProvider extends ServiceProvider
             return new LogManager($app);
         });
 
-        $this->mergeConfigFrom(__DIR__ . '../config/logging.php', 'logging');
+        $this->mergeConfigFrom(__DIR__ . '/../config/logging.php', 'logging');
     }
 
     /**
@@ -28,7 +28,7 @@ class LoggingServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '../config/logging.php' => $this->app->configPath('logging.php'),
+            __DIR__ . '/../config/logging.php' => $this->app->configPath('logging.php'),
         ]);
     }
 }
